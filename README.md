@@ -18,6 +18,20 @@ This pipeline automates the download, preprocessing, and analysis of single-cell
 - **Analysis**: Processes data using kallisto | bustools.
 - **Output**: Generates processed gene expression matrices ready for downstream analysis.
 
+## 🧬 Pipeline Workflow
+
+The workflow of the `SRA_10x_pipeline` can be summarized as follows:
+
+```mermaid
+flowchart TD
+    A[SRA Accession Numbers<br>(txt_inputs/srr_codes.txt)] --> B[Download SRA Data<br>(SRA Downloader Module)]
+    B --> C[Convert SRA to FASTQ<br>(FASTQ Conversion Module)]
+    C --> D[Quality Control<br>(FASTQC Module)]
+    D --> E[Transcriptome Indexing<br>(Build Index Module)]
+    E --> F[Read Quantification<br>(Kb_count or Cell Ranger Module)]
+    F --> G[Output: Gene Expression Matrices<br>(.h5, .mtx, .bus files)]
+
+
 ---
 
 ## 📂 Directory Structure
@@ -32,3 +46,29 @@ SRA_10x_pipeline/
 ├── Data/                          # Deposits raw fastq files and unfiltered counts
 ├── reference_transcriptome/       # Deposits GRCh38 reference transcriptome
 └── .gitignore                     # Git ignore rules
+
+## 🛠️ Requirements
+
+- **Nextflow**: Workflow management system.
+- **Java**: Required for Nextflow execution.
+- **Cell Ranger**: For processing 10x Genomics data (optional, depending on analysis).
+- **wget**: For downloading data from NCBI SRA.
+
+---
+
+## 🚀 Usage
+
+### 1. Clone the Repository:
+
+```bash
+git clone https://github.com/WBeckman142/SRA_10x_pipeline.git
+cd SRA_10x_pipeline
+
+### 2. Configure Input Files:
+
+Place your SRA accession numbers in the txt_inputs/srr_codes.txt file, one per line.
+
+### 3. Run the Pipeline:
+
+```bash
+nextflow run main.nf -c nextflow.config
