@@ -60,5 +60,5 @@ Place your SRA accession numbers in the txt_inputs/srr_codes.txt file, one per l
 ### 3. Run the Pipeline:
 
 ```bash
-nextflow run main.nf -c nextflow.config
+nextflow run 01.wb.scrnaseq_workflow.nf -c nextflow.config
 ```
