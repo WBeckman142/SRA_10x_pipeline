@@ -19,19 +19,6 @@ This pipeline automates the download, preprocessing, and analysis of single-cell
 - **Output**: Generates processed gene expression matrices ready for downstream analysis.
 
 
-## 🧬 Pipeline Workflow
-
-The workflow of the `SRA_10x_pipeline` can be summarized as follows:
-
-```mermaid
-flowchart TD
-    A[SRA Accession Numbers<br>(txt_inputs/srr_codes.txt)] --> B[Download SRA Data<br>(SRA Downloader Module)]
-    B --> C[Convert SRA to FASTQ<br>(FASTQ Conversion Module)]
-    C --> D[Quality Control<br>(FASTQC Module)]
-    D --> E[Transcriptome Indexing<br>(Build Index Module)]
-    E --> F[Read Quantification<br>(Kb_count or Cell Ranger Module)]
-    F --> G[Output: Gene Expression Matrices<br>(.h5, .mtx, .bus files)]
-```
 ---
 
 ## 📂 Directory Structure
