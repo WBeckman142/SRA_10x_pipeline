@@ -13,7 +13,7 @@ This pipeline automates the download, preprocessing, and analysis of single-cell
 ## ⚙️ Features
 
 - **Data Download**: Automatically fetches raw sequencing data from NCBI SRA.
-- **Preprocessing**: Converts SRA files to FASTQ format.
+- **Preprocessing**: Converts SRA files to FASTQ format, downloading only a specified number of reads.
 - **Quality Control**: Performs initial quality checks on the data using FastQC.
 - **Analysis**: Processes data using kallisto | bustools.
 - **Output**: Generates processed gene expression matrices ready for downstream analysis.
@@ -60,5 +60,5 @@ Place your SRA accession numbers in the txt_inputs/srr_codes.txt file, one per l
 ### 3. Run the Pipeline:
 
 ```bash
-nextflow run _nextflow_files/_nextflow_scripts/01.wb.scrnaseq_workflow.nf --max_reads 300000
+nextflow run _nextflow_files/_nextflow_scripts/01.wb.scrnaseq_workflow.nf --max_reads 1000000
 ```
