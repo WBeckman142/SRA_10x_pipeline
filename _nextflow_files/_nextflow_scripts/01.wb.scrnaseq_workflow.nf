@@ -39,7 +39,7 @@ include { run_kb_count           } from "${launchDir}/_nextflow_files/_nextflow_
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 workflow{
-srr_ch.view()
+
     // download fastq files from SRA using fastq-dump
     fastq_ch = sradownloader(srr_ch)
 

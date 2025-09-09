@@ -1,4 +1,4 @@
-data/raw/
+data/
 reference_transcriptome/
 work/
 .nextflow**
