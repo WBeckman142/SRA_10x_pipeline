@@ -6,3 +6,4 @@ work/
 .R**
 R**
 _nextflow_files/_nextflow_modules/Build_index.nf
+.DS_Store
