@@ -38,9 +38,6 @@ SRA_10x_pipeline/
 ## 🛠️ Requirements
 
 - **Nextflow**: Workflow management system.
-- **Java**: Required for Nextflow execution.
-- **Cell Ranger**: For processing 10x Genomics data (optional, depending on analysis).
-- **wget**: For downloading data from NCBI SRA.
 
 ---
 
