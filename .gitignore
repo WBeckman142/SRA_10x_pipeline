@@ -1,0 +1,6 @@
+data/raw/
+reference_transcriptome/
+work/
+.nextflow**
+.R**
+R**
